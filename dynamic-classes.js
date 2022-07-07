@@ -38,6 +38,6 @@ class C extends A {
 }
 
 const c = new C('')
-c.f();
-c.g();
-c.h();
+c.f(); // ??    
+c.g(); // ??
+c.h(); // ??
