@@ -23,6 +23,6 @@ var b = new B();
 
 a.f = f;
 
-a.f(); // o f [A.f, B.f, f]
+a.f(); // + f [A.f, B.f, f]
 b.f(); // + B.f [A.f, B.f, f]
 b.g(); // o B.g [B.g]

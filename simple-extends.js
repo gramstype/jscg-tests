@@ -21,6 +21,6 @@ function f() {
 var a = new A();
 var b = new B();
 
-a.f(); // o A.f [A.f, B.f, function f]
+a.f(); // + A.f [A.f, B.f, function f]
 b.f(); // + B.f [A.f, B.f, function f]
 b.g(); // o B.g [B.g]
