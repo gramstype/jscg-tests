@@ -26,3 +26,9 @@ a.f = f;
 a.f(); // + f [A.f, B.f, f]
 b.f(); // + B.f [A.f, B.f, f]
 b.g(); // o B.g [B.g]
+
+a.f = b.g;
+
+a.f(); // + B.g [A.f, B.f, f, B.g]
+b.f(); // + B.f [A.f, B.f, f]
+b.g(); // o B.g [B.g]
