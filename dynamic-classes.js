@@ -28,7 +28,7 @@ class B extends A {
     }
 }
 
-g() {
+function g() {
     console.log('function g');
 }
 
