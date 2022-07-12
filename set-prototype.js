@@ -10,6 +10,12 @@ var A = {
     }  
  }  
    
- Object.setPrototypeOf(B, A);   
- 
- B.f();  
+Object.setPrototypeOf(B, A);   
+
+function f() {
+    console.log('function f');
+}
+
+ B.f(); // + A.f [A.f, function f]
+
+  // The analysis resolves targets that are valid by inheritance via the use of 'setPrototypeOf' 

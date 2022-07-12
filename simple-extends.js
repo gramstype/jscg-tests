@@ -24,3 +24,6 @@ var b = new B();
 a.f(); // + A.f [A.f, B.f, function f]
 b.f(); // + B.f [A.f, B.f, function f]
 b.g(); // o B.g [B.g]
+
+// When methods are overridden, the analysis considers functions in super class and sub class as equally possible targets 
+// by adding aliases for each overridden method with the same name.

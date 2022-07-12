@@ -11,5 +11,10 @@ A.prototype.g = function () {
 
 var a = new A();
 
-a.f();
-a.g();
+function g() {
+    console.log('function g');
+}
+
+a.g(); // + A.prototype.g [A.prototype.g, function g]
+
+// When a function is attached/added to a prototype via assignment, our analysis adds an alias to the existing function with that name. 

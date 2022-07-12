@@ -17,27 +17,24 @@ function createClass(...properties) {
     }
 }  
 
-const A = createClass('a1', 'a2'); // o createClass [createClass]
-const a = new A('dynamicClassA.a1', 'dynamicClassA.a2'); // ??
-a.f(); // ??
-a.g(); // ??
-
-const B = createClass('b1', 'b2'); // o createClass [createClass]
-const b = new B('dynamicClassB.b1', 'dynamicClassB.b2'); // ??
-b.f(); // ??
-b.g(); // ??
-
-class C extends A {
+const A = createClass('a1', 'a2'); 
+class B extends A {
     constructor() {
         super('dynamicClassC.c1', 'dynamicClassC.c2');
     }
 
-    h() {
-        console.log('C.h');
+    g() {
+        console.log('B.g');
     }
 }
 
-const c = new C('')
-c.f(); // ??    
-c.g(); // ??
-c.h(); // ??
+g() {
+    console.log('function g');
+}
+
+const b = new B();
+
+b.f(); // o dynamicClass.f [dynamicClass.f]
+b.g(); // + B.g [dynamicClass.g, B.g, function g]
+
+// When dynamic classes are instantiated or extended and instantiated, calls to their functions are resolved only by name. 
