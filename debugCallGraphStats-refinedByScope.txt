@@ -1,0 +1,128 @@
+===================== CALL GRAPH =======================
+# FUNCTIONS (total) = 3545
+# FUNCTIONS (externs) = 3540
+# FUNCTIONS (that aren't called) = 3539
+# FUNCTIONS (externs that aren't called) = 3538
+# CALLSITES (total) = 9
+# CALLSITES (with extern target(s)) = 4
+# CALLSITES (with unknown target) = 0
+# CALLSITES (with > 1 target) = 6
+# CALLSITES (with > 3 targets) = 0
+# CALLSITES (with > 5 targets) = 0
+# CALLSITES (with > 10 targets) = 0
+# CALLSITES (with out of scope target(s)) = 3
+# CALLSITES (with > 5% out of scope target(s)) = 3
+Call graph # Total Nodes = 3547
+Call graph # Total Edges = 17
+--------------------- FUNCTIONS ------------------------
+
+FUNCTION f {f} [] @ ./simple-extends.js:2:4
+  ALIASES : # 0
+  ANNOTATIONS ON ALIASES : []
+  CALLSITES that may possibly target this function : # 2
+		f | a.f@./simple-extends.js:24:0
+		f | b.f@./simple-extends.js:25:0
+
+FUNCTION f {f} [] @ ./simple-extends.js:8:4
+  ALIASES : # 0
+  ANNOTATIONS ON ALIASES : []
+  CALLSITES that may possibly target this function : # 2
+		f | a.f@./simple-extends.js:24:0
+		f | b.f@./simple-extends.js:25:0
+
+FUNCTION g {g} [] @ ./simple-extends.js:12:4
+  ALIASES : # 0
+  ANNOTATIONS ON ALIASES : []
+  CALLSITES that may possibly target this function : # 1
+		g | b.g@./simple-extends.js:26:0
+
+FUNCTION f {f} [] @ ./simple-extends.js:17:0
+  ALIASES : # 0
+  ANNOTATIONS ON ALIASES : []
+  CALLSITES that may possibly target this function : # 2
+		f | a.f@./simple-extends.js:24:0
+		f | b.f@./simple-extends.js:25:0
+
+(NoCall) FUNCTION {main} {{main}} [] @ null:-1:-1
+  ALIASES : # 0
+  ANNOTATIONS ON ALIASES : []
+  CALLSITES that may possibly target this function : # 0
+
+(Extern) FUNCTION log {Math.log} [] @ externs.zip//es3.js:1381:11
+  ALIASES : # 0
+  ANNOTATIONS ON ALIASES : []
+  CALLSITES that may possibly target this function : # 4
+		log | console.log@./simple-extends.js:3:8
+		log | console.log@./simple-extends.js:9:8
+		log | console.log@./simple-extends.js:13:8
+		log | console.log@./simple-extends.js:18:4
+
+(Extern) FUNCTION log {Console.prototype.log} [] @ externs.zip//whatwg_console.js:64:24
+  ALIASES : # 0
+  ANNOTATIONS ON ALIASES : []
+  CALLSITES that may possibly target this function : # 4
+		log | console.log@./simple-extends.js:3:8
+		log | console.log@./simple-extends.js:9:8
+		log | console.log@./simple-extends.js:13:8
+		log | console.log@./simple-extends.js:18:4
+--------------------- CALLSITES ------------------------
+
+(HasExternTarget) CALLSITE log | console.log@./simple-extends.js:3:8
+  FUNCTIONS that are possible targets for this callsite : # 2
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Math.log} [] @ externs.zip//es3.js:1381:11
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Console.prototype.log} [] @ externs.zip//whatwg_console.js:64:24
+
+(HasExternTarget) CALLSITE log | console.log@./simple-extends.js:9:8
+  FUNCTIONS that are possible targets for this callsite : # 2
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Math.log} [] @ externs.zip//es3.js:1381:11
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Console.prototype.log} [] @ externs.zip//whatwg_console.js:64:24
+
+(HasExternTarget) CALLSITE log | console.log@./simple-extends.js:13:8
+  FUNCTIONS that are possible targets for this callsite : # 2
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Math.log} [] @ externs.zip//es3.js:1381:11
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Console.prototype.log} [] @ externs.zip//whatwg_console.js:64:24
+
+(HasExternTarget) CALLSITE log | console.log@./simple-extends.js:18:4
+  FUNCTIONS that are possible targets for this callsite : # 2
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Math.log} [] @ externs.zip//es3.js:1381:11
+		(Extern) [[EXTERN, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] log {Console.prototype.log} [] @ externs.zip//whatwg_console.js:64:24
+
+(NEW) CALLSITE A | A@./simple-extends.js:21:8
+  FUNCTIONS that are possible targets for this callsite : # 1
+		[[UNKNOWN]] {unknown} {{unknown}} [] @ <unable to locate source file>
+
+(NEW) CALLSITE B | B@./simple-extends.js:22:8
+  FUNCTIONS that are possible targets for this callsite : # 1
+		[[UNKNOWN]] {unknown} {{unknown}} [] @ <unable to locate source file>
+
+CALLSITE f | a.f@./simple-extends.js:24:0
+  FUNCTIONS that are possible targets for this callsite : # 3
+		[[MATCHES_BY_NAME_FIRSTNAME, DEFINITION_BASED, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] f {f} [] @ ./simple-extends.js:17:0
+  FUNCTIONS that are outOfScope targets for this callsite : # 2
+		(OutOfScope) [[MATCHES_BY_NAME_FIRSTNAME, OUT_OF_SCOPE_STRICT_ALIAS, OUT_OF_SCOPE_STRICT_ACTUAL, DEFINITION_BASED, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] f {f} [] @ ./simple-extends.js:8:4
+		(OutOfScope) [[MATCHES_BY_NAME_FIRSTNAME, OUT_OF_SCOPE_STRICT_ALIAS, OUT_OF_SCOPE_STRICT_ACTUAL, DEFINITION_BASED, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] f {f} [] @ ./simple-extends.js:2:4
+% OutOfScope of Possible Targets ~ 66.66666666666667 %
+
+CALLSITE f | b.f@./simple-extends.js:25:0
+  FUNCTIONS that are possible targets for this callsite : # 3
+		[[MATCHES_BY_NAME_FIRSTNAME, DEFINITION_BASED, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] f {f} [] @ ./simple-extends.js:17:0
+  FUNCTIONS that are outOfScope targets for this callsite : # 2
+		(OutOfScope) [[MATCHES_BY_NAME_FIRSTNAME, OUT_OF_SCOPE_STRICT_ALIAS, OUT_OF_SCOPE_STRICT_ACTUAL, DEFINITION_BASED, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] f {f} [] @ ./simple-extends.js:2:4
+		(OutOfScope) [[MATCHES_BY_NAME_FIRSTNAME, OUT_OF_SCOPE_STRICT_ALIAS, OUT_OF_SCOPE_STRICT_ACTUAL, DEFINITION_BASED, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] f {f} [] @ ./simple-extends.js:8:4
+% OutOfScope of Possible Targets ~ 66.66666666666667 %
+
+CALLSITE g | b.g@./simple-extends.js:26:0
+  FUNCTIONS that are possible targets for this callsite : # 1
+  FUNCTIONS that are outOfScope targets for this callsite : # 1
+		(OutOfScope) [[MATCHES_BY_NAME_FIRSTNAME, OUT_OF_SCOPE_STRICT_ALIAS, OUT_OF_SCOPE_STRICT_ACTUAL, DEFINITION_BASED, MATCHES_BY_NAME_FIRSTNAME_OR_ALIASNAME]] g {g} [] @ ./simple-extends.js:12:4
+% OutOfScope of Possible Targets ~ 100.0 %
+========================================================
+# ARGUMENT Function References: 
+	Intersection of Invocation & Non-Inovcation: 0
+# RETURN Function References: 
+	Intersection of Invocation & Non-Inovcation: 0
+========================================================
+# Aggregated Possible Targets = 17
+# Aggregated OutOfScope Targets = 5
+% Aggregated OutOfScope of Possible Targets ~ 29.41176470588235 %
+========================================================

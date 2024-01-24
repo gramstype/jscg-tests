@@ -1,0 +1,140 @@
+===================== CALL GRAPH =======================
+# FUNCTIONS = 3533
+# CALLSITES = 13
+Call graph # Total Nodes = 3536
+Call graph # Total Edges = 22
+--------------------- FUNCTIONS ------------------------
+
+FUNCTION f [a, f] @ function-return.js:1:0
+  ALIASES : # 1
+  REFERENCED in ARGUMENT (Not as Invocation) # 0 time(s)
+  REFERENCED in ARGUMENT (Invocation) # 1 time(s)
+	a -> GETPROP a 33:2  [length: 1] [source_file: function-return.js]
+  CALLSITES that may possibly target this function : # 5
+		f | f@function-return.js:14:8
+		f | f@function-return.js:18:8
+		f | f@function-return.js:29:0
+		f | f@function-return.js:31:0
+		a | d.a@function-return.js:33:0
+
+FUNCTION y [b, x, y, k] @ function-return.js:3:15
+  ALIASES : # 3
+  REFERENCED in RETURN (Not as Invocation) # 3 time(s)
+	y -> NAME y 3:24  [length: 1] [source_file: function-return.js] [constant_var_flags: 2]
+	null -> FUNCTION y 3:15  [length: 74] [source_file: function-return.js]
+	x -> NAME x 3:11  [length: 1] [source_file: function-return.js]
+  REFERENCED in RETURN (Invocation) # 0 time(s)
+  CALLSITES that may possibly target this function : # 3
+		null | null@function-return.js:29:0
+		k | k@function-return.js:27:0
+		b | d.b@function-return.js:34:0
+
+FUNCTION t [c, t, h] @ function-return.js:9:7
+  ALIASES : # 2
+  REFERENCED in ARGUMENT (Not as Invocation) # 0 time(s)
+  REFERENCED in ARGUMENT (Invocation) # 1 time(s)
+	c -> GETPROP c 35:2  [length: 1] [source_file: function-return.js]
+  CALLSITES that may possibly target this function : # 1
+		c | d.c@function-return.js:35:0
+
+(NoCall) FUNCTION {main} [{main}] @ null:-1:-1
+  ALIASES : # 0
+  CALLSITES that may possibly target this function : # 0
+
+FUNCTION <anonymous>:function-return.js:23:1 [js:23:1] @ function-return.js:23:1
+  ALIASES : # 0
+  REFERENCED in ARGUMENT (Not as Invocation) # 0 time(s)
+  REFERENCED in ARGUMENT (Invocation) # 1 time(s)
+	null -> FUNCTION  23:1  [length: 16] [is_parenthesized: 1] [source_file: function-return.js]
+  CALLSITES that may possibly target this function : # 1
+		null | null@function-return.js:23:0
+
+(Extern) FUNCTION log [log] @ externs.zip//es3.js:1381:11
+  ALIASES : # 0
+  CALLSITES that may possibly target this function : # 3
+		log | console.log@function-return.js:2:4
+		log | console.log@function-return.js:4:8
+		log | console.log@function-return.js:10:8
+
+(Extern) FUNCTION log [log] @ externs.zip//whatwg_console.js:64:24
+  ALIASES : # 0
+  CALLSITES that may possibly target this function : # 3
+		log | console.log@function-return.js:2:4
+		log | console.log@function-return.js:4:8
+		log | console.log@function-return.js:10:8
+--------------------- CALLSITES ------------------------
+
+CALLSITE log | console.log@function-return.js:2:4
+  FUNCTIONS that are possible targets for this callsite : # 3
+		(Extern) log [log] @ externs.zip//es3.js:1381:11
+		(Extern) log [log] @ externs.zip//whatwg_console.js:64:24
+		{unknown} [{unknown}] @ <unable to locate source file>
+
+CALLSITE log | console.log@function-return.js:4:8
+  FUNCTIONS that are possible targets for this callsite : # 3
+		(Extern) log [log] @ externs.zip//es3.js:1381:11
+		(Extern) log [log] @ externs.zip//whatwg_console.js:64:24
+		{unknown} [{unknown}] @ <unable to locate source file>
+
+CALLSITE log | console.log@function-return.js:10:8
+  FUNCTIONS that are possible targets for this callsite : # 3
+		(Extern) log [log] @ externs.zip//es3.js:1381:11
+		(Extern) log [log] @ externs.zip//whatwg_console.js:64:24
+		{unknown} [{unknown}] @ <unable to locate source file>
+
+(HasExternTarget) CALLSITE f | f@function-return.js:14:8
+  FUNCTIONS that are possible targets for this callsite : # 1
+		f [a, f] @ function-return.js:1:0
+
+(HasExternTarget) CALLSITE f | f@function-return.js:18:8
+  FUNCTIONS that are possible targets for this callsite : # 1
+		f [a, f] @ function-return.js:1:0
+
+CALLSITE null | null@function-return.js:23:0
+  FUNCTIONS that are possible targets for this callsite : # 1
+		<anonymous>:function-return.js:23:1 [js:23:1] @ function-return.js:23:1
+
+(HasExternTarget) CALLSITE k | k@function-return.js:27:0
+  FUNCTIONS that are possible targets for this callsite : # 1
+		y [b, x, y, k] @ function-return.js:3:15
+
+(HasExternTarget) CALLSITE f | f@function-return.js:29:0
+  FUNCTIONS that are possible targets for this callsite : # 1
+		f [a, f] @ function-return.js:1:0
+
+CALLSITE null | null@function-return.js:29:0
+  FUNCTIONS that are possible targets for this callsite : # 2
+		y [b, x, y, k] @ function-return.js:3:15
+		{unknown} [{unknown}] @ <unable to locate source file>
+
+(HasExternTarget) CALLSITE f | f@function-return.js:31:0
+  FUNCTIONS that are possible targets for this callsite : # 1
+		f [a, f] @ function-return.js:1:0
+
+CALLSITE a | d.a@function-return.js:33:0
+  FUNCTIONS that are possible targets for this callsite : # 2
+		f [a, f] @ function-return.js:1:0
+		{unknown} [{unknown}] @ <unable to locate source file>
+
+CALLSITE b | d.b@function-return.js:34:0
+  FUNCTIONS that are possible targets for this callsite : # 1
+		y [b, x, y, k] @ function-return.js:3:15
+
+CALLSITE c | d.c@function-return.js:35:0
+  FUNCTIONS that are possible targets for this callsite : # 2
+		t [c, t, h] @ function-return.js:9:7
+		{unknown} [{unknown}] @ <unable to locate source file>
+========================================================
+# ARGUMENT Function References: 
+	Non-Invocation: 0 (0 %)  
+	Invocation: 3 (100 %)  
+	Intersection of Invocation & Non-Inovcation: 0
+# RETURN Function References: 
+	Non-Invocation: 3 (100 %)  
+	Invocation: 0 (0 %)  
+	Intersection of Invocation & Non-Inovcation: 0
+========================================================
+# Aggregated Possible Targets = 22
+# Aggregated OutOfScope Targets = 0
+% Aggregated OutOfScope of Possible Targets ~ 0.0 %
+========================================================
