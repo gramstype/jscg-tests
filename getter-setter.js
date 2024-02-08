@@ -8,15 +8,15 @@ class A {
     }
 }
 
-// class B extends A {
-//     get() {
-//         console.log('B.get');
-//     }
+class B extends A {
+    get() {
+        console.log('B.get');
+    }
 
-//     set(a) {
-//         console.log('B.set');
-//     }
-// }
+    set(a) {
+        console.log('B.set');
+    }
+}
 
 var a = new A();
 a.getName;
